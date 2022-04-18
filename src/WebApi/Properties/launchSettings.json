@@ -18,7 +18,7 @@
     "WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "timesheet",
+      "launchUrl": "timesheet?startDate=2022-02-01&endDate=2022-04-30",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

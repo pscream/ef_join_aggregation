@@ -26,9 +26,16 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<List<TimesheetRowCount>> Get()
+        public async Task<List<TimesheetRowCount>> Get(DateTime startDate, DateTime endDate)
         {
-            return _mapper.Map<List<TimesheetRowCount>>(await _repository.GetTimesheetRow(new Guid()));
+            return _mapper.Map<List<TimesheetRowCount>>(await _repository.GetTimesheetRow(startDate, endDate));
+        }
+
+        [HttpGet]
+        [Route("endOfWeek")]
+        public DateTime GetEndOfWeek(DateTime dt, DayOfWeek startOfWeek)
+        {
+            return _repository.EndOfWeek(dt, startOfWeek);
         }
 
     }

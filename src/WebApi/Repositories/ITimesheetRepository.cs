@@ -10,9 +10,9 @@ namespace WebApi.Repositories
     public interface ITimesheetRepository
     {
 
-        Task<List<Timesheet>> GetTimesheet(Guid id);
+        Task<List<TimesheetRowCount>> GetTimesheetRow(DateTime startDate, DateTime endDate);
 
-        Task<List<TimesheetRowCount>> GetTimesheetRow(Guid id);
+        DateTime EndOfWeek(DateTime dt, DayOfWeek startOfWeek);
 
     }
 

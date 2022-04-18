@@ -1,5 +1,5 @@
 # ef_join_aggregation
-A prototype to model aggregations and joins in EF
+A prototype to model aggregations and joins in EF. As a service part, it consists of the 'EndOfWeek()' function.
 
 1. Create and init the database
 ```
@@ -13,6 +13,15 @@ PS> .\init-database.ps1
 2. Run the API
 
 3. Access the URL
-```
-http://localhost:5000/timesheet
-```
+
+Get grouping:
+
+- http://localhost:5000/timesheet?startDate=2022-02-01&endDate=2022-04-30
+- https://localhost:5001/timesheet?startDate=2022-02-01&endDate=2022-04-30
+
+Get an end date of the week:
+
+- https://localhost:5001/timesheet/endOfWeek?dt=2022-03-13&startOfWeek=Saturday
+- https://localhost:5001/timesheet/endOfWeek?dt=2022-03-16&startOfWeek=Saturday
+- https://localhost:5001/timesheet/endOfWeek?dt=2022-03-12&startOfWeek=Saturday
+- https://localhost:5001/timesheet/endOfWeek?dt=2022-03-11&startOfWeek=Saturday
