@@ -1,21 +1,14 @@
-using System;
+﻿using System;
 
 namespace WebApi.Models.Database
 {
 
-    public class Timesheet
+    public class Sla
     {
 
         public Guid Id { get; set; }
 
-        public Guid ResourceId { get; set; }
-        public Resource Resource { get; set; }
-
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-
-        public Guid StatusId { get; set; }
-        public Status Status { get; set; }
+        public string Name { get; set; }
 
         public Guid CreatedById { get; set; }
         public User CreatedBy { get; set; }

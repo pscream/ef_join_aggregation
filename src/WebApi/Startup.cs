@@ -31,12 +31,21 @@ namespace WebApi
                 }
             );
 
+            services.AddDbContext<TicketContext>(
+                builder =>
+                {
+                    builder.UseSqlServer(Configuration.GetConnectionString("Connection"));
+                }
+            );
+
             services.AddScoped<ITimesheetRepository, TimesheetRepository>();
+            services.AddScoped<ITicketRepository, TicketRepository>();
 
             services.AddAutoMapper(i =>
             {
                 i.AddProfile(typeof(UserProfile));
                 i.AddProfile(typeof(TimesheetProfile));
+                i.AddProfile(typeof(TicketProfile));
             });
 
             services.AddControllers();

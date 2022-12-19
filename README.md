@@ -12,6 +12,8 @@ PS> .\init-database.ps1
 
 2. Run the API
 
+There are two possible run configurations: __Timesheets__ and __Tickets__.
+
 3. Access the URL
 
 Get grouping:
@@ -25,3 +27,6 @@ Get an end date of the week:
 - https://localhost:5001/timesheet/endOfWeek?dt=2022-03-16&startOfWeek=Saturday
 - https://localhost:5001/timesheet/endOfWeek?dt=2022-03-12&startOfWeek=Saturday
 - https://localhost:5001/timesheet/endOfWeek?dt=2022-03-11&startOfWeek=Saturday
+
+Get SLA cache aggregation (spent/left):
+- https://localhost:5001/ticket?referenceTime=2022-12-11T09:30:00
